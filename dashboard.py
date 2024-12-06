@@ -8,7 +8,7 @@ app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
 # Load data
-df = pd.read_csv('prompt_comparison_report.csv')
+df = pd.read_csv('data/prompt_comparison_report.csv')
 
 # Load prompts
 with open('prompts.txt', 'r', encoding='utf-8') as f:
