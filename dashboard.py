@@ -11,9 +11,10 @@ server = app.server
 df = pd.read_csv('prompt_comparison_report.csv')
 
 # Load prompts
-with open('prompts.txt', 'r') as f:
-    default_prompt = f.readline()
-    new_prompt = f.readline()
+with open('prompts.txt', 'r', encoding='utf-8') as f:
+    content = f.read().split('---')
+    default_prompt = content[0].replace('DEFAULT_PROMPT\n', '').strip()
+    new_prompt = content[1].replace('NEW_PROMPT\n', '').strip()
 
 app.layout = html.Div([
     dbc.Container([
