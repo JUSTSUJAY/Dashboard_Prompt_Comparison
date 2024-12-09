@@ -59,8 +59,8 @@ app.layout = html.Div([
 )
 def update_table(score_range):
     filtered_df = df[
-        (df['default_score'].between(score_range[0], score_range[1])) |
-        (df['new_score'].between(score_range[0], score_range[1]))
+        (df['default_prompt_score'].between(score_range[0], score_range[1])) |
+        (df['new_prompt_score'].between(score_range[0], score_range[1]))
     ]
     
     return dbc.Table.from_dataframe(
